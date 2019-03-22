@@ -74,10 +74,6 @@ cityreader(cities)
 # Tucson: (32.1558,-110.8777)
 # Salt Lake City: (40.7774,-111.9301)
 
-# TODO Get latitude and longitude values from the user
-# first_inp = input('Enter lat1,lon1 :').split(',')
-# second_inp = input('Enter lat2,lon2 :').split(',')
-
 
 def intfy(num):
     return int(num)
@@ -125,4 +121,12 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     return within
 
 
-within_cities = cityreader_stretch(45, -100, 32, -120, cities)
+# TODO Get latitude and longitude values from the user
+first_inp = input('Enter lat1,lon1 :').split(',')
+second_inp = input('Enter lat2,lon2 :').split(',')
+
+
+within_cities = cityreader_stretch(
+    first_inp[0], first_inp[1], second_inp[0], second_inp[1], cities)
+for city in within_cities:
+    print(city.name)
